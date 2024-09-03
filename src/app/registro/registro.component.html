@@ -1,0 +1,21 @@
+<div class="main-div">
+    <div class="container" id="container">
+        <div class="form-container sign-in">
+            <form>
+                <h1>Registro</h1>
+                <span>Preencha os dados a seguir</span>
+                <input type="text" placeholder="Nome" [(ngModel)]="nome" [ngModelOptions]="{standalone: true}">
+                <input type="email" placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+                <input type="password" placeholder="Senha" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+                <input type="password" placeholder="Repetir senha" [(ngModel)]="repetir" [ngModelOptions]="{standalone: true}">
+                @if (senhasDiferentes) {
+                    <span class="alert">As senhas não coincidem</span>
+                }
+                @if (vazio) {
+                    <span class="alert">Campos obrigatórios vazios</span>
+                }
+                <button (click)="registrar()">Criar conta</button>
+            </form>
+        </div>
+    </div>
+</div>
